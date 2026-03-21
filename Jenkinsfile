@@ -4,7 +4,7 @@ pipeline {
     stages {
         stage('Build') {
             steps {
-                echo "Hello from Jenkins CI/CD 🚀"
+                echo "Second build triggered automatically 🔥"
             }
         }
     }
