@@ -4,19 +4,13 @@ pipeline {
     stages {
         stage('Build') {
             steps {
-                echo "Building app... 🔨"
+                sh 'echo Hello from shell 🔥'
             }
         }
 
         stage('Test') {
             steps {
-                echo "Running tests... 🧪"
-            }
-        }
-
-        stage('Deploy') {
-            steps {
-                echo "Deploying app... 🚀"
+                echo "Running tests..."
             }
         }
     }
