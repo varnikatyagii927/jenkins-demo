@@ -6,7 +6,7 @@ pipeline {
             steps {
                 sh '''
                 echo "Building Java app..."
-                mvn clean package
+                /opt/homebrew/bin/mvn clean package
                 '''
             }
         }
