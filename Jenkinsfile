@@ -4,7 +4,19 @@ pipeline {
     stages {
         stage('Build') {
             steps {
-                echo "Second build triggered automatically 🔥"
+                echo "Building app... 🔨"
+            }
+        }
+
+        stage('Test') {
+            steps {
+                echo "Running tests... 🧪"
+            }
+        }
+
+        stage('Deploy') {
+            steps {
+                echo "Deploying app... 🚀"
             }
         }
     }
