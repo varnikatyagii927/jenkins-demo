@@ -2,25 +2,20 @@ pipeline {
     agent any
 
     stages {
-        stage('Build') {
+        stage('Build Java App') {
             steps {
                 sh '''
-                echo "Installing Python..."
-                python3 --version
+                echo "Building Java app..."
+                mvn clean package
                 '''
             }
         }
 
-          stage('test') {
-            steps {
-                sh 'ls -la'
-            }
-        }
-        stage('Run App') {
+        stage('Run Java App') {
             steps {
                 sh '''
-                echo "Running Python app..."
-                python3 app.py
+                echo "Running Java app..."
+                java -cp target/jenkins-demo-1.0.jar App
                 '''
             }
         }
