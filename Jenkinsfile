@@ -11,6 +11,11 @@ pipeline {
             }
         }
 
+          stage('test') {
+            steps {
+                sh 'ls -la'
+            }
+        }
         stage('Run App') {
             steps {
                 sh '''
