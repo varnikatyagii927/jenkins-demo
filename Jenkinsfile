@@ -4,18 +4,19 @@ pipeline {
     stages {
         stage('Build') {
             steps {
-               sh '''
-                echo "Current user:"
-                whoami
-                echo "Current directory:"
-                pwd
+                sh '''
+                echo "Installing Python..."
+                python3 --version
                 '''
             }
         }
 
-        stage('Test') {
+        stage('Run App') {
             steps {
-                echo "Running tests..."
+                sh '''
+                echo "Running Python app..."
+                python3 app.py
+                '''
             }
         }
     }
