@@ -1,7 +1,9 @@
-FROM python:3.9-slim
+FROM openjdk:17
 
 WORKDIR /app
 
 COPY . .
 
-CMD ["python3", "app.py"]
+RUN javac App.java
+
+CMD ["java", "App"]
