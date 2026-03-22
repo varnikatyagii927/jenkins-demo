@@ -4,7 +4,12 @@ pipeline {
     stages {
         stage('Build') {
             steps {
-                sh 'echo Hello from shell 🔥'
+               sh '''
+                echo "Current user:"
+                whoami
+                echo "Current directory:"
+                pwd
+                '''
             }
         }
 
