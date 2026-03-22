@@ -5,8 +5,8 @@ pipeline {
         stage('Build Java App') {
             steps {
                 sh '''
-                echo "Building Java app..."
-                /opt/homebrew/bin/mvn clean package
+                echo "Compiling Java..."
+                javac App.java
                 '''
             }
         }
@@ -14,8 +14,8 @@ pipeline {
         stage('Run Java App') {
             steps {
                 sh '''
-                echo "Running Java app..."
-                java -cp target/jenkins-demo-1.0.jar App
+                echo "Running Java App..."
+                java App
                 '''
             }
         }
