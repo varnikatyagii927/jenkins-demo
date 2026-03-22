@@ -2,20 +2,20 @@ pipeline {
     agent any
 
     stages {
-        stage('Build Java App') {
+        stage('Build Docker Image') {
             steps {
                 sh '''
-                echo "Compiling Java..."
-                javac App.java
+                echo "Building Docker image..."
+                docker build -t java-app .
                 '''
             }
         }
 
-        stage('Run Java App') {
+        stage('Run Docker Container') {
             steps {
                 sh '''
-                echo "Running Java App..."
-                java App
+                echo "Running Docker container..."
+                docker run java-app
                 '''
             }
         }
